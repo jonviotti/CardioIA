@@ -1,0 +1,23 @@
+DIRETRIZ BRASILEIRA DE HIPERTENSÃO ARTERIAL (2025)
+FONTE: SOCIEDADE BRASILEIRA DE CARDIOLOGIA (SBC), SBH E SBN
+
+1. DEFINIÇÃO E IMPACTO POPULACIONAL
+A Hipertensão Arterial (HA) é uma doença crônica não transmissível definida por elevação persistente da pressão arterial (PA) sistólica maior ou igual a 140 mmHg e/ou da PA diastólica maior ou igual a 90 mmHg, medida com técnica correta em pelo menos duas ocasiões distintas. 
+
+No Brasil e no mundo, a hipertensão arterial constitui o principal fator de risco modificável para o desenvolvimento de doenças cardiovasculares, incluindo infarto do miocárdio, acidente vascular cerebral (AVC), insuficiência cardíaca e doença renal crônica terminal. A condição de pré-hipertensão (PAS entre 120-139 mmHg ou PAD entre 80-89 mmHg) também exige monitoramento ativo e intervenções precoces no estilo de vida para impedir sua progressão.
+
+2. DETERMINANTES E FATORES DE RISCO ASSOCIADOS
+A patogênese da hipertensão arterial é multifatorial, dependente da interação entre predisposição genética e fatores ambientais e comportamentais:
+- Idade e Sexo: A prevalência de HA cresce linearmente com o envelhecimento, superando 60% na população idosa.
+- Sobrepeso e Obesidade: A adiposidade central e a gordura visceral elevam a atividade simpática, estimulam a retenção de sódio pelo sistema renina-angiotensina-aldosterona (SRAA) e induzem resistência insulínica.
+- Ingestão de Sódio e Potássio: O consumo excessivo de sal de cozinha e alimentos ultraprocessados está diretamente associado ao aumento sustentado da resistência vascular periférica.
+- Sedentarismo e Hábitos de Vida: O tabagismo, o consumo abusivo de bebidas alcoólicas, distúrbios respiratórios do sono (apneia obstrutiva) e estresse psicossocial crônico agravam as metas de controle pressórico.
+
+3. LESÃO DE ÓRGÃOS-ALVO (LOA) E ESTRATIFICAÇÃO DO RISCO CARDIOVASCULAR
+A presença de hipertensão arterial crônica sem tratamento acarreta danos micro e macrovasculares progressivos:
+- Coração: Hipertrofia ventricular esquerda (HVE), disfunção diastólica e insuficiência cardíaca com fração de ejeção preservada ou reduzida.
+- Rins: Redução da taxa de filtração glomerular estimada (TFGe) e presença de albuminúria persistente (marcador de lesão glomerular e risco cardiovascular elevado).
+- Cérebro e Vasos: Acidente vascular cerebral isquêmico/hemorrágico, microangiopatia cerebral e rigidez das grandes artérias (aumento da velocidade de onda de pulso).
+
+4. METAS TERAPÊUTICAS E INTERVENÇÕES
+Recomenda-se como meta geral o controle da pressão arterial para níveis inferiores a 130/80 mmHg na maioria dos pacientes adultos e idosos tolerantes. O tratamento fundamenta-se na associação de medidas não medicamentosas (dieta DASH, restrição de sódio para menos de 2g/dia, prática de exercícios aeróbicos regulares) com terapia farmacológica combinada (bloqueadores do SRAA, bloqueadores dos canais de cálcio e diuréticos tiazídicos) para redução de desfechos cardiovasculares duros.

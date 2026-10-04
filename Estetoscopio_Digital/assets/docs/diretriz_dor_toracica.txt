@@ -1,0 +1,21 @@
+DIRETRIZ BRASILEIRA DE ATENDIMENTO À DOR TORÁCICA NA UNIDADE DE EMERGÊNCIA (2025)
+FONTE: SOCIEDADE BRASILEIRA DE CARDIOLOGIA (SBC)
+
+1. RELEVÂNCIA CLÍNICA E EPIDEMIOLOGIA DA DOR TORÁCICA
+As doenças cardiovasculares representam a principal causa de morte no Brasil e no mundo, sendo a síndrome coronariana aguda (SCA) a principal causa específica de óbito cardiovascular. A SCA representa o espectro de manifestações clínicas e laboratoriais da isquemia miocárdica aguda e é composta pela angina instável e pelo infarto agudo do miocárdio (IAM) com ou sem supradesnivelamento do segmento ST.
+
+O principal sintoma de um paciente com quadro de SCA é a dor torácica. Estima-se que milhões de indivíduos procurem anualmente as salas de emergência com dor torácica ou sintomas equivalentes. Apesar de a dor torácica ser o sintoma mais comum no reconhecimento de um paciente com SCA, no ambiente do pronto-socorro apenas 5 a 20% dos pacientes com dor torácica têm SCA confirmada, e mais da metade dos casos não possui causa cardíaca. 
+
+2. ATENDIMENTO INICIAL E TRIAGEM (TEMPO PORTA-ECG)
+Todo paciente com relato de dor torácica aguda ou sintomas equivalentes (como dispneia, desconforto epigástrico inexplicado ou síncope) deve ser classificado como urgência médica e submetido imediatamente ao protocolo de dor torácica.
+
+Recomenda-se a realização de um eletrocardiograma (ECG) de 12 derivações nos primeiros 10 minutos após a chegada à unidade de emergência (tempo porta-ECG), com interpretação médica imediata. Esse tempo é crítico: atrasos no diagnóstico de infarto agudo do miocárdio com supradesnível do segmento ST retardam a reperfusão coronariana e aumentam exponencialmente a mortalidade e o risco de insuficiência cardíaca pós-infarto.
+
+3. ROTAS DIAGNÓSTICAS E ESTRATIFICAÇÃO DE RISCO
+Nos casos em que o ECG inicial é não diagnóstico (mais de 80% das admissões):
+- Aplicação de escores clínicos de risco validados, como o HEART Score (História, Eletrocardiograma, Idade, Fatores de Risco e Troponina).
+- Avaliação seriada de biomarcadores de lesão miocárdica, com preferência absoluta pelo uso da troponina cardíaca de alta sensibilidade (TCas) em algoritmos rápidos de 0-1h ou 0-2h (protocolos de rule-in e rule-out).
+- Diagnósticos diferenciais potencialmente fatais devem ser investigados e descartados: dissecção aguda de aorta, tromboembolismo pulmonar (TEP), pneumotórax hipertensivo e tamponamento cardíaco.
+
+4. DIRECIONAMENTO TERAPÊUTICO
+Pacientes classificados como de alto risco ou com confirmação de isquemia/necrose aguda devem ser encaminhados imediatamente para internação em Unidade Coronariana (UCO) ou intervenção coronária percutânea (cateterismo cardíaco). Pacientes com critérios de descarte rápido e escore de risco baixo podem receber alta com segurança para acompanhamento ambulatorial precoce.
