@@ -45,7 +45,18 @@ Para garantir a integridade da inferência e a qualidade dos dados (*Data Qualit
    As 10 narrativas do ficheiro <a href="assets/dataset/sintomas.txt">sintomas.txt</a> foram meticulosamente elaboradas através de engenharia reversa dos protocolos da Sociedade Brasileira de Cardiologia (SBC). Cada frase espelha a estrutura semântica real de um paciente em triagem, mas com variáveis controladas. Esta decisão arquitetónica garante que o sistema seja testado num ambiente de alta fidelidade, livre de vieses estruturais e com 100% de rastreabilidade desde a fala do paciente até à ontologia oficial.
 
 2. **Ontologia Clínica (Fonte de Verdade):**
-   O motor de regras (<a href="assets/dataset/mapa_conhecimento.csv">mapa_conhecimento.csv</a>) foi fundamentado nos protocolos da **Sociedade Brasileira de Cardiologia (SBC)**. Utilizamos as Diretrizes de Dor Torácica e Hipertensão (disponíveis na pasta `/docs`) como lastro documental para o cruzamento exato entre sintomas extraídos e diagnósticos sugeridos.
+   O motor de regras (<a href="assets/dataset/mapa_conhecimento.csv">mapa_conhecimento.csv</a>) foi fundamentado nos protocolos da **Sociedade Brasileira de Cardiologia (SBC)**. Utilizamos as Diretrizes de <a href="assets/docs/diretriz_dor_toracica.txt">Dor Toracica</a> e <a href="assets/docs/diretriz_hipertensao.txt">Hipertensão</a> como lastro documental para o cruzamento exato entre sintomas extraídos e diagnósticos sugeridos.
+
+---
+
+## ⚙️ Funcionamento do Motor de Inferência (Python)
+
+O script principal (<a href="assets/diagnostico.py">diagnostico.py</a>) atua como um extrator de regras baseado em processamento de texto, executando o seguinte *pipeline*:
+
+1. **Normalização de Entrada:** O script carrega as frases dos pacientes e aplica técnicas básicas de padronização (remoção de maiúsculas e pontuações discrepantes) para preparar o texto para análise.
+2. **Varredura e *Pattern Matching*:** O código itera sobre o <a href="assets/dataset/mapa_conhecimento.csv">mapa_conhecimento.csv</a>, cruzando palavras-chave e expressões regulares (Sintoma 1 e Sintoma 2) com o relato narrativo do paciente.
+3. **Decisão Lógica:** Ao encontrar a correspondência simultânea dos sintomas obrigatórios numa mesma frase, o motor extrai o diagnóstico associado e isola a patologia.
+4. **Interface e Formatação (ANSI):** O sistema utiliza códigos de escape ANSI para apresentar os resultados no terminal com formatação de cores (verde para sucesso, vermelho/amarelo para alertas), simulando o *dashboard* de um software médico limpo e legível.
 
 ---
 
@@ -83,7 +94,7 @@ No terminal, navegue até à pasta do projeto e execute o script principal. A in
 
 ---
 
-## 🔐 Trilha de Auditoria (Logs Imutáveis)
+## 🔐 Trilha de Auditoria
 
 Em conformidade com as boas práticas de segurança da informação em saúde, a solução possui um sistema de registo *append-only* que nunca sobrescreve resultados anteriores. 
 
