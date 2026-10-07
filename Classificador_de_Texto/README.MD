@@ -9,7 +9,11 @@
 # Classificador de Triagem
 
 ## 🎥 Demonstração do Projeto
-👉 **[Link para o vídeo de apresentação no YouTube (TODO!!)](#)**
+👉 **[Vídeo de apresentação no YouTube](#)**
+
+- <a href="https://youtu.be/gbRPb4SRKmI/">Classificador de Texto</a>
+
+
 
 ---
 
@@ -17,7 +21,7 @@
 
 ## 👨‍🎓 Integrantes: 
 - <a href="https://www.linkedin.com/in/gabriel-oliveira-b6353a16b/">Gabriel Oliveira dos Santos</a>
-- <a href="https://www.linkedin.com/in/arthur-bruttel-7171b8381">Arthur Bruttel Nascimento</a>
+- <a href="https://www.linkedin.com/in/arthur-bruttel-7171b8381/">Arthur Bruttel Nascimento</a>
 - <a href="https://www.linkedin.com/in/jonviotti/">Jonatan Viotti Rodrigues da Silva</a>
 - <a href="https://www.linkedin.com/in/eusamuelrocha/">Samuel Nicolas Oliveira Rocha</a>
 
