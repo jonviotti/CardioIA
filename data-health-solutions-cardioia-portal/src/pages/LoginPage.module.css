@@ -1,0 +1,137 @@
+.pagina {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.apresentacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, var(--cor-primaria) 0%, #7f1d1d 100%);
+  color: #fff;
+}
+
+.apresentacao h1 {
+  font-size: 2.75rem;
+  font-weight: 400;
+}
+
+.apresentacao p {
+  margin: 0;
+  font-size: 1.15rem;
+  opacity: 0.9;
+}
+
+.apresentacao ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  opacity: 0.85;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.15);
+  font-size: 1.75rem;
+}
+
+.form {
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.subtitulo {
+  margin: -0.5rem 0 0.5rem;
+  color: var(--cor-texto-suave);
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.campo input {
+  padding: 0.7rem 0.8rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-superficie);
+}
+
+.campo input:focus {
+  outline: 2px solid var(--cor-primaria-suave);
+  border-color: var(--cor-primaria);
+}
+
+.erro {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: var(--cor-perigo-suave);
+  color: var(--cor-perigo);
+  font-size: 0.85rem;
+}
+
+.botao {
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--cor-primaria);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao:hover:not(:disabled) {
+  background: var(--cor-primaria-escura);
+}
+
+.botao:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.demo {
+  border: none;
+  background: none;
+  color: var(--cor-primaria);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 760px) {
+  .pagina {
+    grid-template-columns: 1fr;
+  }
+
+  .apresentacao {
+    padding: 2rem 1.5rem;
+  }
+
+  .apresentacao h1 {
+    font-size: 2rem;
+  }
+
+  .apresentacao ul {
+    display: none;
+  }
+
+  .form {
+    padding: 1.5rem 1rem;
+  }
+}

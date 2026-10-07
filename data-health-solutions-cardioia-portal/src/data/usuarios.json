@@ -1,0 +1,4 @@
+[
+  { "id": 1, "nome": "Dra. Helena Prado", "email": "medico@cardioia.com", "senha": "cardio123", "perfil": "Médica" },
+  { "id": 2, "nome": "Recepção CardioIA", "email": "recepcao@cardioia.com", "senha": "cardio123", "perfil": "Recepção" }
+]

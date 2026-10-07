@@ -1,0 +1,63 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra);
+}
+
+.topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.nome {
+  font-size: 1.05rem;
+}
+
+.meta {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+.relato {
+  margin: 0;
+  padding-left: 0.75rem;
+  border-left: 3px solid var(--cor-primaria-suave);
+  font-size: 0.9rem;
+  color: var(--cor-texto-suave);
+  font-style: italic;
+}
+
+.sintomas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  padding: 0.15rem 0.55rem;
+  border-radius: 6px;
+  background: var(--cor-fundo);
+  font-size: 0.75rem;
+}
+
+.rodape {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: auto;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--cor-borda);
+  font-size: 0.85rem;
+}
+
+.contato {
+  color: var(--cor-texto-suave);
+  font-size: 0.75rem;
+  word-break: break-all;
+}

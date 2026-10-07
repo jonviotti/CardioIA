@@ -1,0 +1,50 @@
+:root {
+  --cor-primaria: #e11d48;
+  --cor-primaria-escura: #be123c;
+  --cor-primaria-suave: #ffe4e6;
+  --cor-fundo: #f5f6fa;
+  --cor-superficie: #ffffff;
+  --cor-texto: #1f2937;
+  --cor-texto-suave: #6b7280;
+  --cor-borda: #e5e7eb;
+  --cor-sucesso: #059669;
+  --cor-sucesso-suave: #d1fae5;
+  --cor-alerta: #d97706;
+  --cor-alerta-suave: #fef3c7;
+  --cor-perigo: #dc2626;
+  --cor-perigo-suave: #fee2e2;
+  --raio: 12px;
+  --sombra: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 12px rgba(0, 0, 0, 0.04);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--cor-texto);
+  background: var(--cor-fundo);
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--cor-fundo);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1.25;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}

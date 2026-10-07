@@ -1,0 +1,6 @@
+[
+  { "id": 1, "nome": "Dra. Helena Prado", "especialidade": "Cardiologia Clínica" },
+  { "id": 2, "nome": "Dr. Marcos Tavares", "especialidade": "Arritmologia" },
+  { "id": 3, "nome": "Dra. Sofia Mendes", "especialidade": "Insuficiência Cardíaca" },
+  { "id": 4, "nome": "Dr. André Vasconcelos", "especialidade": "Hemodinâmica" }
+]

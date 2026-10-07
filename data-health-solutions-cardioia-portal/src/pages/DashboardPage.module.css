@@ -1,0 +1,104 @@
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.grade {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra);
+}
+
+.painel h2 {
+  font-size: 1.05rem;
+}
+
+.painelTopo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.painelTopo a {
+  font-size: 0.85rem;
+  color: var(--cor-primaria);
+}
+
+.barras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.barraRotulo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.barraTrilho {
+  height: 8px;
+  border-radius: 999px;
+  background: var(--cor-fundo);
+  overflow: hidden;
+}
+
+.barra {
+  height: 100%;
+  border-radius: 999px;
+  background: var(--cor-primaria);
+}
+
+.alerta {
+  border-left: 4px solid var(--cor-perigo);
+}
+
+.listaAlerta {
+  margin: 0;
+  padding-left: 1.2rem;
+  font-size: 0.9rem;
+}
+
+.cta {
+  align-self: flex-start;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  background: var(--cor-primaria);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 960px) {
+  .metricas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grade {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 340px) {
+  .metricas {
+    grid-template-columns: 1fr;
+  }
+}

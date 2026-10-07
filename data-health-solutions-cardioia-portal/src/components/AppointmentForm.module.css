@@ -1,0 +1,103 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: var(--raio);
+  background: var(--cor-superficie);
+  box-shadow: var(--sombra);
+}
+
+.titulo {
+  font-size: 1.15rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  flex: 1;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: var(--cor-superficie);
+  font-weight: 400;
+  width: 100%;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+  outline: 2px solid var(--cor-primaria-suave);
+  border-color: var(--cor-primaria);
+}
+
+.linha {
+  display: flex;
+  gap: 1rem;
+}
+
+.erro {
+  color: var(--cor-perigo);
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.dica {
+  margin: -0.5rem 0 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: var(--cor-alerta-suave);
+  font-size: 0.8rem;
+}
+
+.acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.primario,
+.secundario {
+  padding: 0.65rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primario {
+  border: none;
+  background: var(--cor-primaria);
+  color: #fff;
+}
+
+.primario:hover {
+  background: var(--cor-primaria-escura);
+}
+
+.secundario {
+  border: 1px solid var(--cor-borda);
+  background: transparent;
+}
+
+.sucesso {
+  margin: 0;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  background: var(--cor-sucesso-suave);
+  color: var(--cor-sucesso);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .linha {
+    flex-direction: column;
+  }
+}

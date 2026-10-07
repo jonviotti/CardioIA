@@ -1,0 +1,114 @@
+.lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-radius: 10px;
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-borda);
+}
+
+.cancelada {
+  opacity: 0.6;
+}
+
+.quando {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 5.5rem;
+  padding: 0.4rem;
+  border-radius: 8px;
+  background: var(--cor-primaria-suave);
+  color: var(--cor-primaria-escura);
+  font-size: 0.85rem;
+}
+
+.detalhes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.linhaNome {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.meta,
+.obs {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+.lado {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.status {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+}
+
+.s_agendada { background: var(--cor-alerta-suave); color: var(--cor-alerta); }
+.s_concluida { background: var(--cor-sucesso-suave); color: var(--cor-sucesso); }
+.s_cancelada { background: var(--cor-fundo); color: var(--cor-texto-suave); }
+
+.botoes {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.botoes button {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 6px;
+  background: transparent;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.botoes button:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+.vazio {
+  padding: 2rem 1rem;
+  text-align: center;
+  color: var(--cor-texto-suave);
+  background: var(--cor-superficie);
+  border-radius: var(--raio);
+  border: 1px dashed var(--cor-borda);
+}
+
+@media (max-width: 560px) {
+  .item {
+    flex-wrap: wrap;
+  }
+
+  .lado {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}

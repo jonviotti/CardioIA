@@ -1,0 +1,164 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--cor-superficie);
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.logo {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 8px;
+  background: var(--cor-primaria);
+  color: #fff;
+  font-size: 1rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.link {
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+}
+
+.link:hover {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
+.ativo {
+  background: var(--cor-primaria-suave);
+  color: var(--cor-primaria-escura);
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--cor-borda);
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: var(--cor-texto);
+  color: #fff;
+  font-weight: 600;
+}
+
+.usuarioInfo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  font-size: 0.85rem;
+}
+
+.usuarioInfo small {
+  color: var(--cor-texto-suave);
+}
+
+.sair {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.sair:hover {
+  border-color: var(--cor-primaria);
+  color: var(--cor-primaria);
+}
+
+.menuBotao {
+  display: none;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+}
+
+@media (max-width: 760px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+  }
+
+  .menuBotao {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navAberto {
+    display: flex;
+  }
+
+  .usuario {
+    margin: 0.5rem 0 0;
+    padding: 0.75rem 0 0;
+    border-left: none;
+    border-top: 1px solid var(--cor-borda);
+  }
+
+  .sair {
+    margin-left: auto;
+  }
+
+  .main {
+    padding: 1.25rem 1rem;
+  }
+}
