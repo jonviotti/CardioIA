@@ -1,0 +1,34 @@
+Sintoma 1;Sintoma 2;Doença Associada
+dor no peito;falta de ar;Síndrome Coronariana Aguda
+dor no peito;desmaio;Síndrome Coronariana Aguda
+dor no peito;suor frio;Infarto Agudo do Miocárdio
+dor no peito;dor no braço esquerdo;Infarto Agudo do Miocárdio
+dor no peito;desconforto no estômago;Infarto Agudo do Miocárdio
+falta de ar;desconforto no estômago;Infarto Agudo do Miocárdio
+suor frio;desconforto no estômago;Infarto Agudo do Miocárdio
+suor frio;dor no braço esquerdo;Infarto Agudo do Miocárdio
+dor no peito;piora com esforço;Angina Estável
+desmaio;falta de ar;Angina Instável
+falta de ar;pernas inchadas;Insuficiência Cardíaca
+cansaço extremo;pernas inchadas;Insuficiência Cardíaca
+falta de ar;cansaço extremo;Insuficiência Cardíaca
+falta de ar;piora com esforço;Insuficiência Cardíaca
+falta de ar ao deitar;pernas inchadas;Insuficiência Cardíaca
+falta de ar ao deitar;cansaço extremo;Insuficiência Cardíaca
+pressão alta;dor de cabeça;Hipertensão Arterial
+pressão alta;cansaço extremo;Hipertensão Arterial
+pressão alta;tontura;Hipertensão Arterial
+pressão alta;visão turva;Crise Hipertensiva
+dor de cabeça;visão turva;Crise Hipertensiva
+pressão alta;dor no peito;Crise Hipertensiva
+palpitação;tontura;Arritmia Cardíaca
+palpitação;desmaio;Arritmia Cardíaca
+tontura;desmaio;Arritmia Cardíaca
+palpitação;falta de ar;Fibrilação Atrial
+palpitação;cansaço extremo;Fibrilação Atrial
+desmaio;piora com esforço;Estenose Aórtica
+tontura;piora com esforço;Estenose Aórtica
+dor no peito;piora ao deitar;Pericardite
+dor no peito;febre;Pericardite
+febre;palpitação;Miocardite
+febre;falta de ar;Miocardite

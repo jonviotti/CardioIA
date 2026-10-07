@@ -1,106 +1,97 @@
 # FIAP - Faculdade de Informática e Administração Paulista
 
 <p align="center">
-<a href= "https://www.fiap.com.br/"><img src="assets/docs/logo-fiap.png" alt="FIAP - Faculdade de Informática e Admnistração Paulista" border="0" width=40% height=40%></a>
+<a href= "https://www.fiap.com.br/"><img src="assets/logo-fiap.png" alt="FIAP - Faculdade de Informática e Administração Paulista" border="0" width=40% height=40%></a>
 </p>
 
 <br>
 
-# Fase 2: Diagnóstico Automatizado – IA no Estetoscópio Digital
-## Parte 1 – Frases de sintomas e extração de informações (NLP)
+# CardioIA — Estetoscópio Digital (Fase 2, Parte 1)
 
-## Grupo: Data Health Solutions
+## Data Health Solutions
+
+## 🎥 Demonstração
+
+👉 **[Link para o vídeo no YouTube (não listado) — TODO](#)**
 
 ## 👨‍🎓 Integrantes: 
-
 - <a href="https://www.linkedin.com/in/gabriel-oliveira-b6353a16b/">Gabriel Oliveira dos Santos</a>
 - <a href="https://www.linkedin.com/in/arthur-bruttel-7171b8381">Arthur Bruttel Nascimento</a>
 - <a href="https://www.linkedin.com/in/jonviotti/">Jonatan Viotti Rodrigues da Silva</a>
 - <a href="https://www.linkedin.com/in/eusamuelrocha/">Samuel Nicolas Oliveira Rocha</a>
 
-
-
+## 👩‍🏫 Professores:
 ### Tutor(a) 
 - <a href="https://www.linkedin.com/in/leonardoorabona/">Leonardo Ruiz Orabona</a>
 ### Coordenador(a)
 - <a href="https://www.linkedin.com/company/inova-fusca">André Godoi Chiovato</a>
 
----
 
-## 📜 Descrição do Projeto
+## 📜 Descrição
 
-Este projeto consiste numa ferramenta automatizada de apoio ao diagnóstico cardiológico, desenvolvida em Python para processar relatos em linguagem natural de pacientes e extrair patologias clinicamente mapeadas. 
+Ferramenta de apoio ao diagnóstico cardiológico, desenvolvida em Python, que lê relatos de pacientes escritos em linguagem natural, identifica os sintomas descritos e sugere um diagnóstico com base em um mapa de conhecimento. A solução simula, de forma simplificada, os "estetoscópios digitais" usados em centros de diagnóstico: um código simples aliado a dados bem organizados.
 
-A arquitetura foi estruturada com foco rigoroso em **Governança de Dados** e **Rastreabilidade**, refletindo os padrões de segurança, imutabilidade e auditoria exigidos em integrações de sistemas hospitalares reais (como prontuários eletrónicos).
+**Base de conhecimento (em `src/dataset/`):**
 
-### Arquitetura de Dados e Governança
+- `sintomas.txt`: 30 relatos sintéticos de pacientes, cada um com o que a pessoa sente, quando começou e como isso afeta a rotina. Os relatos cobrem 12 condições cardiológicas e incluem casos com negação ("não tenho falta de ar") e com sinônimos ("aperto no tórax", "fico zonzo").
+- `mapa_conhecimento.csv`: a ontologia no formato pedido (`Sintoma 1 | Sintoma 2 | Doença Associada`), com 33 regras e 12 doenças (Síndrome Coronariana Aguda, Infarto, Anginas, Insuficiência Cardíaca, Hipertensão, Crise Hipertensiva, Arritmia, Fibrilação Atrial, Estenose Aórtica, Pericardite e Miocardite).
+- `sinonimos.csv`: dicionário com 90 expressões populares que levam a 17 sintomas padronizados (ex.: "falta de fôlego", "dispneia" e "dificuldade para respirar" → *falta de ar*).
+- `gabarito.csv`: o diagnóstico esperado pela equipe para cada relato, usado para medir a concordância do motor.
 
-Para garantir a integridade da inferência e a qualidade dos dados (*Data Quality*), a solução separa o motor de processamento de texto das regras de negócio clínico:
+**Como o motor decide (`src/diagnostico.py`):**
 
-1. **Origem dos Dados e Metodologia de Teste (Mock Data):**
-   O desenvolvimento deste motor envolveu uma etapa prévia de exploração e filtragem em bases públicas de NLP médico, como o *dataset* <a href="https://huggingface.co/datasets/Larxel/healthqa-br">healthqa-br</a> (Hugging Face). Durante a fase de limpeza de dados (*Data Cleaning*), o grupo constatou que o uso direto de *datasets* abertos do SUS introduzia variáveis não controladas (jargões laboratoriais complexos, anotações de enfermagem e ruídos de outras especialidades) que reduziam a precisão determinística da inferência clínica proposta para esta fase.
-   
-   Para garantir o rigor técnico e o pilar de Qualidade (*Data Quality*), a equipe evoluiu a estratégia: em vez de forçar a adaptação de dados ruidosos, projetamos um ambiente de validação baseado em **dados sintéticos controlados** (*Mock Data*). 
-   
-   As 10 narrativas do ficheiro <a href="assets/dataset/sintomas.txt">sintomas.txt</a> foram meticulosamente elaboradas através de engenharia reversa dos protocolos da Sociedade Brasileira de Cardiologia (SBC). Cada frase espelha a estrutura semântica real de um paciente em triagem, mas com variáveis controladas. Esta decisão arquitetónica garante que o sistema seja testado num ambiente de alta fidelidade, livre de vieses estruturais e com 100% de rastreabilidade desde a fala do paciente até à ontologia oficial.
+1. **Normalização:** o texto vira minúsculo e perde os acentos, para que "Síncope" e "sincope" sejam iguais.
+2. **Extração de sintomas:** cada expressão do dicionário é buscada como palavra inteira (sem casar pedaços de outras palavras) e traduzida para o sintoma padronizado.
+3. **Tratamento de negação:** se "sem", "não", "nem" ou "nunca" aparece nas três palavras anteriores ao sintoma, ele é registrado como *negado* e não entra no diagnóstico.
+4. **Inferência:** uma doença só é sugerida quando **os dois sintomas** da regra estão presentes no relato. Se várias regras disparam, a doença com mais regras satisfeitas é o diagnóstico principal e as demais aparecem como hipóteses alternativas. Em caso de empate, vale a ordem do mapa.
+5. **Validação e auditoria:** o resultado é comparado com o gabarito (concordância atual: **30/30**) e salvo em um log CSV com data e hora, que nunca sobrescreve execuções anteriores.
 
-2. **Ontologia Clínica (Fonte de Verdade):**
-   O motor de regras (<a href="assets/dataset/mapa_conhecimento.csv">mapa_conhecimento.csv</a>) foi fundamentado nos protocolos da **Sociedade Brasileira de Cardiologia (SBC)**. Utilizamos as Diretrizes de <a href="assets/docs/diretriz_dor_toracica.txt">Dor Toracica</a> e <a href="assets/docs/diretriz_hipertensao.txt">Hipertensão</a> como lastro documental para o cruzamento exato entre sintomas extraídos e diagnósticos sugeridos.
-
----
-
-## ⚙️ Funcionamento do Motor de Inferência (Python)
-
-O script principal (<a href="assets/diagnostico.py">diagnostico.py</a>) atua como um extrator de regras baseado em processamento de texto, executando o seguinte *pipeline*:
-
-1. **Normalização de Entrada:** O script carrega as frases dos pacientes e aplica técnicas básicas de padronização (remoção de maiúsculas e pontuações discrepantes) para preparar o texto para análise.
-2. **Varredura e *Pattern Matching*:** O código itera sobre o <a href="assets/dataset/mapa_conhecimento.csv">mapa_conhecimento.csv</a>, cruzando palavras-chave e expressões regulares (Sintoma 1 e Sintoma 2) com o relato narrativo do paciente.
-3. **Decisão Lógica:** Ao encontrar a correspondência simultânea dos sintomas obrigatórios numa mesma frase, o motor extrai o diagnóstico associado e isola a patologia.
-4. **Interface e Formatação (ANSI):** O sistema utiliza códigos de escape ANSI para apresentar os resultados no terminal com formatação de cores (verde para sucesso, vermelho/amarelo para alertas), simulando o *dashboard* de um software médico limpo e legível.
-
----
-
-## 📁 Estrutura de Pastas
-
-O projeto utiliza resolução dinâmica de caminhos (`os.path`), garantindo portabilidade entre ambientes sem necessidade de reconfiguração manual.
-
-    Estetoscopio_Digital/
-    │
-    ├── diagnostico.py                  # Script principal: Motor de NLP e inferência
-    ├── docs/                           # Documentação e base teórica             
-    │   ├── diretriz_dor_toracica.txt   # Fonte de verdade para Síndrome Coronariana
-    │   └── diretriz_hipertensao.txt    # Fonte de verdade para Hipertensão e Insuficiência
-    ├── dataset/                        # Base de dados estruturada e não estruturada
-    │   ├── mapa_conhecimento.csv       # Ontologia clínica (regras SBC)
-    │   └── sintomas.txt                # Relatos sintéticos dos pacientes
-    └── logs/                           # Trilha de auditoria gerada automaticamente
-        └── log_diagnosticos_*.csv      # Logs imutáveis com carimbo de tempo
-
----
-
-## 🔧 Pré-requisitos e Execução
-
-O algoritmo foi desenvolvido em Python e requer a biblioteca `pandas` para a formatação e exportação da trilha de auditoria.
-
-**1. Instalação da dependência:**
-    pip install pandas
+**Governança de dados:** os relatos são sintéticos e controlados para garantir rastreabilidade de ponta a ponta (da fala do paciente até a regra acionada, registrada no log). O mapa foi construído com base nas diretrizes da Sociedade Brasileira de Cardiologia sobre dor torácica e hipertensão (em `document/`). Por ser baseado em regras e em uma base pequena, o motor não reconhece expressões fora do dicionário e não substitui avaliação médica.
 
 
-**2. Como executar o motor de diagnóstico:**
-No terminal, navegue até à pasta do projeto e execute o script principal. A interface do terminal utilizará códigos ANSI para exibir os diagnósticos sugeridos de forma limpa e categorizada por cores.
+## 📁 Estrutura de pastas
 
-    python diagnostico.py
+Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
+
+- <b>assets</b>: elementos não estruturados, como o logo da FIAP.
+
+- <b>document</b>: diretrizes da SBC usadas como base do mapa de conhecimento (`diretriz_dor_toracica.txt`, `diretriz_hipertensao.txt`).
+
+- <b>src</b>: código-fonte e dados.
+    - `diagnostico.py`: motor de extração de sintomas e inferência.
+    - `dataset/`: `sintomas.txt`, `mapa_conhecimento.csv`, `sinonimos.csv` e `gabarito.csv`.
+    - `logs/`: trilha de auditoria gerada a cada execução (`log_diagnosticos_AAAAMMDD_HHMMSS.csv`).
+
+- <b>README.md</b>: este arquivo.
+
+## 🔧 Como executar o código
+
+Pré-requisitos: Python 3.9+ e a biblioteca `pandas`.
+
+```bash
+pip install pandas
+```
+
+Na raiz do projeto:
+
+```bash
+python src/diagnostico.py
+```
+
+O script resolve os caminhos a partir da própria pasta, então também funciona se executado de dentro de `src/`. O terminal mostra, para cada paciente, os sintomas identificados, os sintomas negados, as regras acionadas, o diagnóstico sugerido e as hipóteses alternativas. No final, aparece a concordância com o gabarito e o caminho do log gerado em `src/logs/`.
+
+Para testar novos relatos, acrescente frases em `src/dataset/sintomas.txt` (uma por linha). Para ampliar o conhecimento, acrescente regras em `mapa_conhecimento.csv` e novas expressões em `sinonimos.csv`.
 
 
----
+## 🗃 Histórico de lançamentos
 
-## 🔐 Trilha de Auditoria
-
-Em conformidade com as boas práticas de segurança da informação em saúde, a solução possui um sistema de registo *append-only* que nunca sobrescreve resultados anteriores. 
-
-A cada execução do `diagnostico.py`, o código verifica a infraestrutura de pastas e gera automaticamente um ficheiro de auditoria na pasta `logs/`. Utilizando a biblioteca `datetime`, cada registo é carimbado cronologicamente no formato `log_diagnosticos_YYYYMMDD_HHMMSS.csv`, garantindo o histórico completo de todas as análises clínicas processadas pela IA.
-
----
+* 0.2.0 - 07/10/2026
+    * Regra passa a exigir os dois sintomas juntos; antes, um sintoma isolado já disparava a doença.
+    * Dicionário de sinônimos, tratamento de negação e ranking de hipóteses.
+    * Base ampliada para 30 relatos, 33 regras e 12 doenças, com gabarito de validação.
+    * Estrutura de pastas no padrão do template FIAP.
+* 0.1.0 - 03/10/2026
+    * Primeira versão: 10 relatos, 10 regras e log de auditoria.
 
 ## 📋 Licença
 
